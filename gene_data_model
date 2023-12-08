@@ -1,0 +1,44 @@
+def main():
+    cpg_sites_gindex_file = 'Text S2.txt'
+    cpg_gene_dict = {}
+
+    with open(cpg_sites_gindex_file) as xfile:
+        # Iterate through each line in the file
+        for line in xfile:
+            # Split the line into columns using tab as the delimiter
+            columns = line.strip().split('\t')
+
+            # Check if there are at least two columns
+            if len(columns) >= 2:
+                # Extract CpG site and gene index
+                cpg_site = columns[0]
+                gene_index = columns[1]
+            else:
+                # Handle the case where there are fewer than two columns
+                cpg_site = columns[0]
+                gene_index = ""
+
+            # Store the data in the dictionary
+            cpg_gene_dict[cpg_site] = gene_index
+
+    # count unique genes
+    unique_genes = set(cpg_gene_dict.values())
+    gene_count = len(unique_genes)
+    print(f"Number of unique genes: {gene_count}") # Number of unique genes: 13216
+
+### TODO
+
+def impute_missing_values():
+    pass
+
+def group_genes_by_cpg_site():
+    pass
+
+def count_cpg_sites():
+    pass
+
+def open_data_file():
+    pass
+
+if __name__ == '__main__':
+    main()
