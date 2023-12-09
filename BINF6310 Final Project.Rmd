@@ -12,9 +12,7 @@ methylation_file <- "C:/Users/jmaglio/Desktop/NEU Masters/BINF6310/Final Project
 ```{r}
 # Read methylation file
 gz_connection <- gzfile(methylation_file)
-data <- readr::read_csv(file=gz_connection, skip = 6, col_types = readr::cols())
-
-# Issue with parsing columns correctly due to different datatypes
+data <- readr::read_csv(file=gz_connection, skip = 7, col_types = readr::cols())
 ```
 
 
