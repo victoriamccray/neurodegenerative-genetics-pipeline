@@ -1,0 +1,36 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+# Data Load Method 1
+
+```{r}
+#Load only methylation local file
+methylation_file <- "C:/Users/jmaglio/Desktop/NEU Masters/BINF6310/Final Project/Final Project/GPL8490_HumanMethylation27_270596_v.1.2.csv.gz"
+```
+
+```{r}
+# Read methylation file
+gz_connection <- gzfile(methylation_file)
+data <- readr::read_csv(file=gz_connection, skip = 7, col_types = readr::cols())
+```
+
+
+# Data Load Method 2
+
+```{r}
+library(vctrs)
+library(GEOquery)
+```
+
+```{r}
+# Load data directly from NCBI GEO using GEO accession number
+gse_accession <- "GSE15745"
+gse_dataset <- getGEO(gse_accession, GSEMatrix = TRUE, AnnotGPL = FALSE)
+
+# Select expression data and metadata
+expression_matrix <- exprs(gse_dataset[[1]])
+metadata <- pData(gse_dataset[[1]])
+```
+
+
