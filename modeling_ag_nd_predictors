@@ -1,0 +1,41 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, classification_report
+
+# Read data into DataFrame
+df = pd.read_csv('Text S1.txt', delimiter='\t')
+
+# Define column names
+column_names = ["Organ", "GPL", "GSE", "GSM", "Age", "Condition", "Label"]
+
+# Assign column names to the DataFrame
+df.columns = column_names
+
+# Drop irrelevant columns (identifiers) and use 'Age' as a feature
+X = df.drop(columns=["Organ", "GPL", "GSE", "GSM", "Label"])
+y = df["Label"]
+
+# Split the data into training and testing sets based on the 'Train' and 'Test' labels
+X_train = X[df["Condition"] == "Train"]
+y_train = y[df["Condition"] == "Train"]
+X_test = X[df["Condition"] == "Test"]
+y_test = y[df["Condition"] == "Test"]
+
+# Add these lines to check the sizes of your sets
+print("Training set size:", len(X_train))
+print("Testing set size:", len(X_test))
+
+# Initialize and train a RandomForestClassifier
+clf = RandomForestClassifier(random_state=42)
+clf.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = clf.predict(X_test)
+
+# Evaluate the model
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.2f}")
+
+# Display classification report
+print(classification_report(y_test, y_pred))
