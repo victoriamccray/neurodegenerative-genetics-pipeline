@@ -10,19 +10,19 @@ The program reads a text file comprised of cpg sites and gene indexes into a dic
 
 This Python script, modeling_ag_nd_predictors.py, demonstrates the use of a RandomForestClassifier to predict labels based on biological data. The data is read from a tab-delimited file (Text S1.txt) and preprocessed to train and evaluate the model.
 
-# Requirements
-Python 3.x
-pandas
-scikit-learn
+## Requirements
+- Python 3.x
+- pandas
+- scikit-learn
 
-Data Preparation
+## Data Preparation
 The script assumes that the input data file (Text S1.txt) contains columns: "Organ," "GPL," "GSE," "GSM," "Age," "Condition," and "Label."
 
 Irrelevant columns ("Organ," "GPL," "GSE," "GSM") are dropped, and "Age" is used as a feature.
 
 The data is split into training and testing sets based on the "Train" and "Test" labels in the "Condition" column.
 
-Model Training and Evaluation
+## Model Training and Evaluation
 A RandomForestClassifier is initialized and trained on the training set.
 
 Predictions are made on the test set, and model accuracy is calculated.
