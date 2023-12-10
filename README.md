@@ -18,8 +18,8 @@ Author: Joseph Maglio
 This R Notebook demonstrates two methods for loading methylation data using different approaches. The notebook is designed for loading data related to the HumanMethylation27 platform.
 
 ## Requirements
-- R
-- R packages: vctrs, GEOquery, readr
+- `R`
+- `R` packages: `vctrs, GEOquery, readr`
 
 ## Data Loading Methods
 ### Data Load Method 1
@@ -42,9 +42,9 @@ This Python script, modeling_ag_nd_predictors.py, demonstrates the use of a Rand
 - `scikit-learn`
 
 ## Data Preparation
-The script assumes that the input data file (Text S1.txt) contains columns: "Organ," "GPL," "GSE," "GSM," "Age," "Condition," and "Label."
+The script assumes that the input data file `(Text S1.txt)` contains columns: `"Organ," "GPL," "GSE," "GSM," "Age," "Condition,"` and `"Label"`.
 
-Irrelevant columns ("Organ," "GPL," "GSE," "GSM") are dropped, and "Age" is used as a feature.
+Irrelevant columns `("Organ," "GPL," "GSE," "GSM")` are dropped, and `"Age"` is used as a feature.
 
 The data is split into training and testing sets based on the "Train" and "Test" labels in the "Condition" column.
 
