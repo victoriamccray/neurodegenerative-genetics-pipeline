@@ -244,8 +244,6 @@ If you use this pipeline or find it helpful, please cite the original paper:
 **Course:** BINF6310 - Northeastern University  
 **Original Paper:** Shi et al. (2021) - Frontiers in Genetics
 
----
-
 
 ---
 
