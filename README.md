@@ -246,9 +246,6 @@ If you use this pipeline or find it helpful, please cite the original paper:
 
 ---
 
-## License
-
-MIT License - See LICENSE file for details
 
 ---
 
